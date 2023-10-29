@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68.2.2", "wheel>=0.41.2"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["CyclicTask"]
+
+[project]
+name = "CyclicTask"
+version = "0.1.0"
+authors = [{name = "ThunderTecke", email = "thunder.tecke@gmail.com"}]
+maintainers = [{name = "ThunderTecke", email = "thunder.tecke@gmail.com"}]
+keywords = ["Threading", "Thread", "Cyclic", "PLC"]
+description = "Allow a task to be executed regulary"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+
+[project.urls]
+"Homepage" = "https://github.com/ThunderTecke/CyclicTask"
+"Bug Tracker" = "https://github.com/ThunderTecke/CyclicTask/issues"
+"Change log" = "https://github.com/ThunderTecke/CyclicTask/blob/main/CHANGELOG.md"
