@@ -1,7 +1,5 @@
-from collections.abc import Callable, Iterable, Mapping
 import threading
 import time
-from typing import Any
 from CycleTimeError import CycleTimeError
 import logging
 
