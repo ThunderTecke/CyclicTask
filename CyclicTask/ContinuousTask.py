@@ -53,17 +53,21 @@ class ContinuousTask(threading.Thread):
             self.task()
             self.lastRuntime = time.time() - self.lastExecutionTime
 
-            if self.lastRuntime >= self.maximumTime: # The cycle time has exceeded the maximum cycle time
+            if self.maximumTime is None:
+                self.logger.debug(f"Task executed ({self.lastRuntime}s")
                 self.cycleTimeWarning = False
-                self.logger.error(f"Maximum cycle time exceeded ({self.lastRuntime:.3f}s/{self.maximumTime:.3f}s)")
-                raise CycleTimeError(f"Maximum cycle time exceeded ({self.lastRuntime:.3f}s/{self.maximumTime:.3f}s)")
-            elif self.lastRuntime >= (self.maximumTime * 0.8): # The cycle time has exceed 80% of the maximum cycle time
-                self.cycleTimeWarning = True
-                self.logger.debug(f"Task executed ({self.lastRuntime}s - {(self.lastRuntime/self.maximumTime)*100.0:.3f}%)")
-                self.logger.warning(f"80% of the maximum cycle time exceeded ({self.lastRuntime:.3f}s/{self.maximumTime:.3f}s - {(self.lastRuntime/self.maximumTime)*100.0:.3f}%)")
             else:
-                self.logger.debug(f"Task executed ({self.lastRuntime}s - {(self.lastRuntime/self.maximumTime)*100.0:.3f}%)")
-                self.cycleTimeWarning = False
+                if self.lastRuntime >= self.maximumTime: # The cycle time has exceeded the maximum cycle time
+                    self.cycleTimeWarning = False
+                    self.logger.error(f"Maximum cycle time exceeded ({self.lastRuntime:.3f}s/{self.maximumTime:.3f}s - {(self.lastRuntime/self.maximumTime)*100.0:.3f}%)")
+                    raise CycleTimeError(f"Maximum cycle time exceeded ({self.lastRuntime:.3f}s/{self.maximumTime:.3f}s - {(self.lastRuntime/self.maximumTime)*100.0:.3f}%)")
+                elif self.lastRuntime >= (self.maximumTime * 0.8): # The cycle time has exceed 80% of the maximum cycle time
+                    self.cycleTimeWarning = True
+                    self.logger.debug(f"Task executed ({self.lastRuntime}s - {(self.lastRuntime/self.maximumTime)*100.0:.3f}%)")
+                    self.logger.warning(f"80% of the maximum cycle time exceeded ({self.lastRuntime:.3f}s/{self.maximumTime:.3f}s - {(self.lastRuntime/self.maximumTime)*100.0:.3f}%)")
+                else:
+                    self.logger.debug(f"Task executed ({self.lastRuntime}s - {(self.lastRuntime/self.maximumTime)*100.0:.3f}%)")
+                    self.cycleTimeWarning = False
         
         self.logger.info(f"Continuous task \"{self.name}\" stopped")
 
