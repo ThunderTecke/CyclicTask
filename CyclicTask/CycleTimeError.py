@@ -1,0 +1,2 @@
+class CycleTimeError(Exception):
+    pass
