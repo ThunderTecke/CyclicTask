@@ -28,6 +28,8 @@ class TimedTask(threading.Thread):
         elif maximumTime < self.cycleTime:
             self.maximumTime = self.cycleTime * 1.5
             self.logger.warning(f"The maximum time has been set to {self.maximumTime}, because it was lower than the cycle time.")
+        else:
+            self.maximumTime = maximumTime
 
 
         self.stopThread = False
