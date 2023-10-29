@@ -1,6 +1,6 @@
 import threading
 import time
-from CycleTimeError import CycleTimeError
+from .CycleTimeError import CycleTimeError
 import logging
 
 class TimedTask(threading.Thread):

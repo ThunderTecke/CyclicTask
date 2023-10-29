@@ -1,5 +1,14 @@
 # Change log
 
+## [0.1.2] - 2023-10-29
+### Added
+- ContinuousTask test added
+
+### Modified
+
+### Fixed
+- Relative import fixed
+
 ## [0.1.1] - 2023-10-29
 ### Added
 - Class documentation
