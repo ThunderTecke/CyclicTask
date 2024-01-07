@@ -1,4 +1,4 @@
-[![GitHub](https://img.shields.io/github/license/ThunderTecke/CyclicTask)](https://github.com/ThunderTecke/CyclicTask/blob/develop/LICENSE)
+[![GitHub](https://img.shields.io/github/license/ThunderTecke/CyclicTask)](https://github.com/ThunderTecke/CyclicTask/blob/main/LICENSE)
 [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/ThunderTecke/CyclicTask)](https://github.com/ThunderTecke/CyclicTask/releases)
 [![GitHub Release Date](https://img.shields.io/github/release-date/ThunderTecke/CyclicTask)](https://github.com/ThunderTecke/CyclicTask/releases)
 [![GitHub last commit](https://img.shields.io/github/last-commit/ThunderTecke/CyclicTask)](https://github.com/ThunderTecke/CyclicTask/commits)
