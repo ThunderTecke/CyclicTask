@@ -1,5 +1,13 @@
 # Change log
 
+## [0.1.4] - 2024-01-07
+### Added
+- Readme redaction
+
+### Modified
+
+### Fixed
+
 ## [0.1.3] - 2023-10-29
 ### Added
 - TimedTask test added
